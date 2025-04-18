@@ -1,6 +1,6 @@
 # Realtek r8125 DKMS
 
-![Static Badge](https://img.shields.io/badge/RELEASE-V9.014.01-1-blue)
+![Static Badge](https://img.shields.io/badge/RELEASE-V9.014.01-blue)
 
 This repository started as an investigation into several hangs/crashes (wrong fragment count with lots of small packets) and occasional data corruption but ended as a comprehensive rewrite of the official Realtek r8125 driver. While highly stable, the mainline r8169 driver does not fully support more advanced features of the 8125 family, such as RSS, PTP, multi-TX queues, MSIX interrupts etc.  
 
@@ -138,4 +138,3 @@ GPL-2 on Realtek driver and the debian packaing.
 
 - [Realtek r8125 driver release page](https://www.realtek.com/Download/List?cate_id=584)
 - [ParrotSec's realtek-rtl88xxau-dkms, where got hint from](https://github.com/ParrotSec/realtek-rtl88xxau-dkms)
-
