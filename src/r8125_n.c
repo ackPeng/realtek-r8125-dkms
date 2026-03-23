@@ -12095,6 +12095,14 @@ rtl8125_hw_config(struct rtl8125_private *tp, struct net_device *dev)
         /* Set Rx packet filter */
         rtl8125_set_rx_mode(dev);
 
+        /*
+         * Board-specific LED policy:
+         * LED0 (yellow): blink on traffic at 2.5G link
+         * LED3 (green): solid on at 2.5G link
+         */
+        RTL_W16(tp, 0x18, 0x0220);  /* LED0 */
+        RTL_W16(tp, 0x96, 0x0020);  /* LED3 */
+
         rtl8125_enable_aspm_clkreq_lock(tp, aspm ? 1 : 0);
         rtl8125_lock_config_regs(tp);
         udelay(10);
