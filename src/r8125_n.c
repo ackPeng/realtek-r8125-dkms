@@ -12097,12 +12097,12 @@ rtl8125_hw_config(struct rtl8125_private *tp, struct net_device *dev)
 
         /*
          * Board-specific LED policy:
-         * LED0 (yellow): blink on traffic at 2.5G link
-         * LED3 (green): solid on at 2.5G link
+         * LED0 (yellow): blink on traffic at all link
+         * LED3 (green): solid on at all link
          */
-        RTL_W16(tp, 0x18, 0x0220);  /* LED0 */
-        RTL_W16(tp, 0x96, 0x0020);  /* LED3 */
-
+        RTL_W16(tp, 0x18, 0x022B);  /* LED0: all-speed link + ACT */
+        RTL_W16(tp, 0x96, 0x002B);  /* LED3: all-speed link */
+        
         rtl8125_enable_aspm_clkreq_lock(tp, aspm ? 1 : 0);
         rtl8125_lock_config_regs(tp);
         udelay(10);
