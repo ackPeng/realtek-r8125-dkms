@@ -18436,6 +18436,14 @@ rtl8125_hw_config(struct net_device *dev)
         /* Set Rx packet filter */
         rtl8125_hw_set_rx_packet_filter(dev);
 
+        /*
+         * Board-specific LED policy:
+         * LED0 (yellow): blink on traffic at all link
+         * LED3 (green): solid on at all link
+         */
+        RTL_W16(tp, 0x18, 0x022B);  /* LED0: all-speed link + ACT */
+        RTL_W16(tp, 0x96, 0x002B);  /* LED3: all-speed link */
+
 #ifdef ENABLE_DASH_SUPPORT
         rtl8125_check_and_enable_dash_interrupt(tp);
 #endif
