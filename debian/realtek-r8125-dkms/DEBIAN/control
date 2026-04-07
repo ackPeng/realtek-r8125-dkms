@@ -1,0 +1,14 @@
+Package: realtek-r8125-dkms
+Version: 9.016.01-1
+Architecture: amd64
+Maintainer: Deokgyu Yang <secugyu@gmail.com>
+Installed-Size: 1134
+Depends: dkms (>= 1.95)
+Section: contrib/kernel
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://github.com/awesometic/realtek-r8125-dkms
+Description: Realtek RTL8125 driver in DKMS format
+  This package provides the source code for RTL8125 Linux driver that may
+  include supporting other Realtek 2.5 GbE chipsets to be build with dkms.
+  Kernel sources or headers are required to compile this module.
